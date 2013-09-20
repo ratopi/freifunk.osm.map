@@ -63,7 +63,6 @@
 							counter++;
 							latSum += x.location.lat;
 		                    lonSum += x.location.lon;
-							console.log( "lat: " + (latSum / counter) + " lon: " + (lonSum / counter) );
 
 							map.setCenter( new OpenLayers.LonLat( (lonSum / counter), (latSum / counter) ).transform( epsg4326, projectTo ), 6 );
 
