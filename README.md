@@ -3,4 +3,4 @@ OpenLayers zusammengestrickt.
 
 Das ganze ist momentan noch ein "proof of concept" und der Code muß auch noch wesentlich überarbeitet werden.
 
-Der aktuelle Stand ist unter http://ratopi.github.io/freifunk.osm.map zu sehen.
+Der aktuelle Stand ist unter http://ratopi.github.io/freifunk.osm.map/src/index.html zu sehen.
