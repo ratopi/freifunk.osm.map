@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>OpenLayers Marker Popups</title>
+	<title>Freifunk Map</title>
 </head>
 <body>
 	<div id="mapdiv"></div>
@@ -9,112 +9,119 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script>
 
-		var map = new OpenLayers.Map( "mapdiv" );
-		map.addLayer( new OpenLayers.Layer.OSM() );
-
-	    var epsg4326 = new OpenLayers.Projection( "EPSG:4326" ); //WGS 1984 projection
-
-	    var projectTo = map.getProjectionObject(); //The map projection (Spherical Mercator)
-
-		// ---
-
-		var markerDef = {
-			externalGraphic: 'img/marker-icon.png',
-			graphicWidth:   25, graphicHeight:  41,
-			graphicXOffset:-12, graphicYOffset:-41
-		};
-
-		// ---
-
-	    var vectorLayer = new OpenLayers.Layer.Vector("Overlay");
-
-	    function addPoint( def )
-	    {
-			vectorLayer.addFeatures(
-				new OpenLayers.Feature.Vector(
-					new OpenLayers.Geometry.Point( def.lon, def.lat  ).transform( epsg4326, projectTo ),
-					{ description: def.description },
-					markerDef
-				)
-			);
-	    }
-
-		var counter = 0;
-		var latSum = 0;
-		var lonSum = 0;
-	    
-	    $.getJSON( 
-	    	"data/directory.json",
-	    	function( data )
-	    	{
-	    		for ( var k in data )
-	    		{
-	    			$.getJSON(
-	    				"data/" + k + ".json",
-	    				function( x )
-	    				{
-	    					addPoint(
-	    						{
-	    							"description": x.name,
-	    							"lat": x.location.lat,
-	    							"lon": x.location.lon
-	    						}
-	    					);
-							counter++;
-							latSum += x.location.lat;
-		                    lonSum += x.location.lon;
-
-							map.setCenter( new OpenLayers.LonLat( (lonSum / counter), (latSum / counter) ).transform( epsg4326, projectTo ), 6 );
-
-
-						}
-	    			);
-	    		}
-	    	}
-	    );
-	    
-	    map.addLayer(vectorLayer);
-
-		// ---
-
-		// Add a selector control to the vectorLayer with popup functions
-
-		var controls = {
-	      selector: new OpenLayers.Control.SelectFeature(vectorLayer, { onSelect: createPopup, onUnselect: destroyPopup })
-	    };
-
-		// ---
-
-	    function createPopup(feature) {
-	      feature.popup = new OpenLayers.Popup.FramedCloud("pop",
-	          feature.geometry.getBounds().getCenterLonLat(),
-	          null,
-	          '<div class="markerContent">'+feature.attributes.description+'</div>',
-	          null,
-	          true,
-	          function() { controls['selector'].unselectAll(); }
-	      );
-	      //feature.popup.closeOnMove = true;
-	      map.addPopup(feature.popup);
-	    }
-
-		// ---
-
-		function destroyPopup( feature )
+		function startIt()
 		{
-	      feature.popup.destroy();
-	      feature.popup = null;
-	    }
+			var map = new OpenLayers.Map( "mapdiv" );
+			map.addLayer( new OpenLayers.Layer.OSM() );
 
-		// ---
+			var epsg4326 = new OpenLayers.Projection( "EPSG:4326" ); //WGS 1984 projection
 
-	    map.addControl(controls['selector']);
-	    controls['selector'].activate();
+			var projectTo = map.getProjectionObject(); //The map projection (Spherical Mercator)
 
+			// ---
+
+			var markerDef = {
+				externalGraphic: 'img/marker-icon.png',
+				graphicWidth:   25, graphicHeight:  41,
+				graphicXOffset:-12, graphicYOffset:-41
+			};
+
+			// ---
+
+			var vectorLayer = new OpenLayers.Layer.Vector("Overlay");
+
+			function addPoint( def )
+			{
+				vectorLayer.addFeatures(
+					new OpenLayers.Feature.Vector(
+						new OpenLayers.Geometry.Point( def.lon, def.lat  ).transform( epsg4326, projectTo ),
+						{ description: def.description },
+						markerDef
+					)
+				);
+		    }
+
+			var counter = 0;
+			var latSum = 0;
+			var lonSum = 0;
+			$.getJSON(
+				"data/directory.json",
+				function( data )
+				{
+					for ( var k in data )
+					{
+						$.getJSON(
+							"data/" + k + ".json",
+							function( x )
+							{
+								addPoint(
+									{
+										"description": x.name,
+										"lat": x.location.lat,
+										"lon": x.location.lon
+									}
+								);
+
+								counter++;
+								latSum += x.location.lat;
+								lonSum += x.location.lon;
+
+								map.setCenter( new OpenLayers.LonLat( (lonSum / counter), (latSum / counter) ).transform( epsg4326, projectTo ), 6 );
+
+
+							}
+						);
+					}
+				}
+			);
+
+			map.addLayer( vectorLayer );
+
+			// ---
+
+			// Add a selector control to the vectorLayer with popup functions
+
+			var controls = {
+				selector: new OpenLayers.Control.SelectFeature( vectorLayer, { onSelect: createPopup, onUnselect: destroyPopup } )
+			};
+
+			// ---
+
+			function createPopup( feature )
+			{
+				feature.popup = new OpenLayers.Popup.FramedCloud(
+					"pop",
+					feature.geometry.getBounds().getCenterLonLat(),
+					null,
+					'<div class="markerContent">'+feature.attributes.description+'</div>',
+					null,
+					true,
+					function()
+					{
+						controls['selector'].unselectAll();
+					}
+				);
+				// feature.popup.closeOnMove = true;
+				map.addPopup( feature.popup );
+			}
+
+			// ---
+
+			function destroyPopup( feature )
+			{
+				feature.popup.destroy();
+				feature.popup = null;
+			}
+
+			// ---
+
+			map.addControl( controls[ 'selector' ] );
+			controls[ 'selector' ].activate();
+		}
+
+		startIt();
 
 	</script>
-
-	<div id="explanation">Popup bubbles appearing when you click a marker. The marker content is set within a feature attribute</div>
 
 </body>
 </html>
