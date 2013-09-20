@@ -1,0 +1,35 @@
+{
+  "name": "Freifunk Köln, Bonn und Umgebung",
+  "url": "http://kbu.freifunk.net",
+  "state": {
+    "lastchange": 1377001302
+  },
+  "location": {
+    "city": "Köln, Bonn und Umgebung",
+    "lat": 50.76157,
+    "lon": 6.78891
+  },
+  "contact": {
+    "email": "info@kbu.freifunk.net",
+    "irc": "irc://paranode/#ff-kbu",
+    "ml": "freifunk-bonn@lists.bonn.freifunk.net",
+    "twitter": "freifunkkbu"
+  },
+  "events": [
+    {
+      "extra": "Jeden ersten Donnerstag im Monat, 20 Uhr",
+      "title": "Treffen im Netzladen, Bonn",
+      "location": "http://osm.org/go/0GIEy_1ax?m="
+    },
+    {
+      "extra": "Jeden zweiten Donnerstag im Monat, 20 Uhr",
+      "title": "Treffen im C4, Köln",
+      "location": "http://osm.org/go/0GC9nD8~g--?m="
+    }
+  ],
+  "techDetails": {
+    "routing": "BATMAN",
+    "vpn": "fastd"
+  },
+  "api": "0.1"
+}

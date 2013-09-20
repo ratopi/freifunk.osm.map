@@ -1,0 +1,61 @@
+{
+  "name": "Wermelskirchen",
+  "metacommunity": "Freifunk-NRW",
+  "url": "http://wk.freifunk.net",
+  "state": {
+    "nodes": 30,
+    "lastchange": 1379183245
+  },
+  "location": {
+    "city": "Wermelskirchen",
+    "address": {
+      "Name": "Katt-Bistro",
+      "Street": "Kattwinkelstraße 3",
+      "Zipcode": "42929"
+    },
+    "lat": 51.13863,
+    "lon": 7.21682
+  },
+  "contact": {
+    "email": "wermelskirchen@freifunk.net",
+    "facebook": "https://www.facebook.com/FreifunkWermelskirchen",
+    "ml": "wermelskirchen@freifunk.net",
+    "phone": "+49-2196-909312",
+    "twitter": "https://twitter.com/ff_wk"
+  },
+  "feeds": [
+    {
+      "name": "Blog",
+      "category": "blog",
+      "type": "atom",
+      "url": "http://freifunk-wermelskirchen.de/feed/"
+    }
+  ],
+  "techDetails": {
+    "stoererhaftung": "VereinsVPN vom Verbund freier Netzwerke NRW (i.G.)",
+    "bootstrap": "Software aufspielen, via HTML konfigurieren, per Mail anmelden.",
+    "firmware": {
+      "url": "http://fff.wk.freifunk.net/",
+      "name": "Lübecker Firmware (Pre-Gluon)"
+    },
+    "networks": {
+      "ipv6": [
+        {
+          "prefixlength": 64,
+          "prefix": "fda0:747e:ab29:2196::"
+        }
+      ],
+      "ipv4": [
+        {
+          "netmask": 16,
+          "network": "10.52.0.0"
+        }
+      ]
+    },
+    "routing": "BATMAN",
+    "splashpage": "None",
+    "updatemode": "Autoupdate geplant.",
+    "vpn": "Zugang via Gateway-Server vom Verein"
+  },
+  "api": "0.1"
+}

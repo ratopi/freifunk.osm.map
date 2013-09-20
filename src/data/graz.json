@@ -1,0 +1,41 @@
+{
+  "name": "Funkfeuer Graz",
+  "metacommunity": "Funkfeuer",
+  "url": "http://graz.funkfeuer.at",
+  "state": {
+    "nodes": 130,
+    "lastchange": 1379244774
+  },
+  "location": {
+    "city": "Graz",
+    "address": {
+      "Name": "realraum",
+      "Street": "Brockmanngasse 15",
+      "Zipcode": "8010"
+    },
+    "lat": 47.0709,
+    "lon": 15.4382
+  },
+  "contact": {
+    "email": "equinox@ffgraz.net",
+    "jabber": "equinox@realraum.at",
+    "ml": "graz@lists.funkfeuer.at"
+  },
+  "techDetails": {
+    "networks": {
+      "ipv4": [
+        {
+          "netmask": 16,
+          "network": "10.12.0.0"
+        },
+        {
+          "netmask": 23,
+          "network": "193.33.150.0"
+        }
+      ]
+    },
+    "routing": "OLSR",
+    "topodata": "https://stats.ffgraz.net/topo/topology.dot"
+  },
+  "api": "0.1"
+}

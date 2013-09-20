@@ -1,0 +1,36 @@
+{
+  "name": "Freifunk Dresden",
+  "url": "www.ddmesh.de",
+  "state": {
+    "nodes": 6,
+    "lastchange": 1375048800,
+    "message": "Open for public"
+  },
+  "location": {
+    "city": "Dresden",
+    "lat": 51.054533,
+    "lon": 13.741357
+  },
+  "contact": {
+    "email": "freifunk@ddmesh.de",
+    "googleplus": "https://plus.google.com/u/0/communities/108088672678522515509"
+  },
+  "techDetails": {
+    "networks": {
+      "ipv4": [
+        {
+          "netmask": 16,
+          "network": "10.200.x.y"
+        },
+        {
+          "netmask": 16,
+          "network": "10.201.x.y"
+        }
+      ]
+    },
+    "routing": "BATMAN",
+    "vpn": "icvpn"
+  },
+  "api": "0.1"
+}
+

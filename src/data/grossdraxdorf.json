@@ -1,0 +1,39 @@
+{
+  "name": "Freifunk Grossdraxdorf",
+  "url": "http://leipzig.freifunk.net",
+  "state": {
+    "nodes": 13,
+    "lastchange": 1373286587,
+    "message": "Wireless Community Network"
+  },
+  "location": {
+    "city": "Großdraxdorf",
+    "address": {
+      "Zipcode": "07980"
+    },
+    "lat": 50.770479,
+    "lon": 12.111686
+  },
+  "contact": {
+    "email": "info@leipzig.freifunk.net",
+    "irc": "#freifunk"
+  },
+  "techDetails": {
+    "firmware": {
+      "name": "Openwrt Trunk"
+    },
+    "networks": {
+      "ipv4": [
+        {
+          "netmask": 24,
+          "network": "104.59.246.0"
+        }
+      ]
+    },
+    "routing": "OLSR",
+    "topodata": "https://db.leipzig.freifunk.net/uptime/dot/",
+    "updatemode": "manuell",
+    "vpn": "OpenVPN OLSR"
+  },
+  "api": "0.1"
+}

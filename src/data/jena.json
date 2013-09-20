@@ -1,0 +1,49 @@
+{
+    "name": "Freifunk Jena",
+    "url": "http://freifunk-jena.de",
+    "state": {
+        "nodes": 19,
+        "lastchange": 1379710261
+    },
+    "location": {
+        "city": "Jena",
+        "lat": 50.927206,
+        "lon": 11.586361
+    },
+    "contact": {
+        "email": "post@freifunk-jena.de",
+        "facebook": "https://www.facebook.com/FreifunkJena",
+        "jabber": "micha@stoecker.me",
+        "irc": "ffj@chat.freifunk-jena.de",
+        "ml": "ffj@freifunk-jena.de",
+        "phone": "03641/3279873",
+        "twitter": "https://twitter.com/freifunk_jena"
+    },
+    "techDetails": {
+        "stoererhaftung": "Exit-VPN auf Anfrage",
+        "bootstrap": "flash 'n go",
+        "firmware": {
+            "url": "http://firmware.freifunk-jena.de",
+            "name": "FreifunkAdvanced"
+        },
+        "networks": {
+            "ipv6": [
+                {
+                    "prefixlength": 48,
+                    "prefix": "fd59:b1b7:1d1f::"
+                }
+            ],
+            "ipv4": [
+                {
+                    "netmask": 16,
+                    "network": "10.17.0.0"
+                }
+            ]
+        },
+        "routing": "BATMAN",
+        "splashpage": "selfmade",
+        "updatemode": "manuell",
+        "vpn": "n2n"
+    },
+    "api": "0.1"
+}

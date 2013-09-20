@@ -1,0 +1,44 @@
+{
+  "name": "Freifunk Bielefeld",
+  "url": "http://freifunk-bielefeld.de",
+  "state": {
+    "nodes": 30,
+    "lastchange": 1379087789
+  },
+  "location": {
+    "city": "Bielefeld",
+    "address": {
+      "Name": "Hackerspace Bielefeld",
+      "Street": "Sudbrackstraße 42",
+      "Zipcode": "33611"
+    },
+    "lat": 52.03830232105035,
+    "lon": 8.532949090003967
+  },
+  "contact": {
+    "email": "info@freifunk-bielefeld.de",
+    "ml": "freifunk-bielefeld@googlegroups.com"
+  },
+  "techDetails": {
+    "bootstrap": "flash & mesh",
+    "firmware": {
+      "url": "http://freifunk-bielefeld.de/doku.php?id=downloads"
+    },
+    "networks": {
+      "ipv6": [
+        {
+          "prefix": "fdef:17a0:ffb1::/48"
+        }
+      ],
+      "ipv4": [
+        {
+          "network": "10.29.0.0/16"
+        }
+      ]
+    },
+    "routing": "BATMAN",
+    "splashpage": "Nodogsplash",
+    "vpn": "fastd"
+  },
+  "api": "0.1"
+}

@@ -1,0 +1,62 @@
+{
+  "techDetails": {
+    "firmware": {
+      "url": "http://firmware.chemnitz.freifunk.net/firmware/attitude_adjustment/STABLE"
+    },
+    "networks": {
+      "ipv4": [
+        {
+          "netmask": 16,
+          "network": "10.8.0.0"
+        }
+      ],
+     "ipv6": [
+        {
+          "prefixlength": 64,
+          "prefix": "2001:470:7b1d:ff"
+        }
+      ]
+    },
+    "splashpage": "captive portal",
+    "vpn": "vtun without ssl"
+  },
+  "api": "0.1",
+  "contact": {
+    "facebook": "https://www.facebook.com/FreifunkChemnitz",
+    "email": "info@chemnitz.freifunk.net",
+	"twitter": "FreifunkC",
+	"irc": "freifunk@irc.chemnitz.freifunk.net",
+	"googleplus": "https://plus.google.com/b/112132629169315579137/112132629169315579137"
+  },
+  "location": {
+    "city": "Chemnitz",
+    "address": {
+      "Name": "Freifunk Chemnitz e.V.",
+      "Street": "Augustusburger Straße 102",
+      "Zipcode": "09126"
+    },
+    "lat": 50.830681,
+    "lon": 12.939686
+  },
+  "name": "Freifunk Chemnitz e.V.",
+  "state": {
+    "nodes": 141,
+    "lastchange": 1379710409
+  },
+  "events": [
+    {
+      "extra": "Jeden Montag, 19-23Uhr",
+      "title": "Sprechstunde in der A102",
+      "location": "http://osm.org/go/0MIaTtYOq?m="
+    }
+  ],
+    "feeds": [
+    {
+      "name": "Freifunk Chemnitz Blog",
+      "category": "blog",
+      "type": "atom",
+	  "url": "http://www.chemnitz.freifunk.net/feed/"
+    }
+  ],
+  "url": "http://www.chemnitz.freifunk.net"
+}

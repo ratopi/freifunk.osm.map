@@ -1,0 +1,46 @@
+{
+  "name": "Freifunk Zootzen",
+  "metacommunity": "Gadow/Zootzen",
+  "url": "http://www.freifunk-gadow.de",
+  "state": {
+    "nodes": 21,
+    "lastchange": 1373286587,
+    "message": "Wireless Community Network"
+  },
+  "location": {
+    "city": "Zootzen",
+    "address": {
+      "Zipcode": "16909"
+    },
+    "lat": 53.13754182,
+    "lon": 12.58754771
+  },
+  "contact": {
+    "irc": "#freifunk",
+    "twitter": "https://www.twitter.com/FreifunkLeipzig"
+  },
+  "techDetails": {
+    "firmware": {
+      "url": "http://testing.meshkit.freifunk.net",
+      "name": "Openwrt Meshkit (Testing)"
+    },
+    "networks": {
+      "ipv4": [
+        {
+          "netmask": 24,
+          "network": "104.61.241.0"
+        },
+        {
+          "netmask": 24,
+          "network": "10.61.241.0"
+        }
+      ]
+    },
+    "routing": "OLSR",
+    "splashpage": "Openwrt",
+    "topodata": "https://db.leipzig.freifunk.net/uptime/dot/",
+    "updatemode": "manuell",
+    "vpn": "OpenVPN + OLSR"
+  },
+  "api": "0.1"
+}

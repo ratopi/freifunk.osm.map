@@ -1,0 +1,57 @@
+{
+  "name": "Freifunk Hamburg",
+  "url": "http://hamburg.freifunk.net",
+  "techDetails": {
+    "vpn": "fastd",
+    "splashpage": "Keine",
+    "firmware": {
+      "url": "http://wiki.freifunk.net/Freifunk_Hamburg/Firmware"
+    },
+    "routing": "BATMAN",
+    "stoererhaftung": "VPN in die Niederlande",
+    "networks": {
+      "ipv4": [
+        {
+          "netmask": 20,
+          "network": "10.112.0.0"
+        }
+      ],
+      "ipv6": [
+        {
+          "prefix": "fd51:2bb2:fd0d::",
+          "prefixlength": 64
+        }
+      ]
+    },
+    "bootstrap": "http://gw01.hamburg.freifunk.net:8080/"
+  },
+  "contact": {
+    "ml": "freifunk@hamburg.ccc.de",
+    "twitter": "FreifunkHH",
+    "irc": "irc://hackint/%23ffhh",
+    "facebook": "https://www.facebook.com/FreifunkHamburg",
+    "email": "kontakt@hamburg.freifunk.net"
+  },
+  "state": {
+    "lastchange": 1379710203,
+    "nodes": 303
+  },
+  "api": "0.1",
+  "location": {
+    "lat": 53.574267,
+    "city": "Hamburg",
+    "lon": 10.024418,
+    "address": {
+      "Street": "Humboldtstr. 53",
+      "Name": "Chaos Computer Club Hansestadt Hamburg",
+      "Zipcode": "22083"
+    }
+  },
+  "feeds": [
+    {
+      "category": "blog",
+      "url": "http://hamburg.freifunk.net/?feed=rss2",
+      "type": "rss"
+    }
+  ]
+}

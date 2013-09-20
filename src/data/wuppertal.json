@@ -1,0 +1,61 @@
+{
+  "name": "Freifunk Wuppertal",
+  "metacommunity": "Freifunk Rheinland e.V.",
+  "url": "https://www.freifunk-wuppertal.net",
+  "state": {
+    "nodes": 26,
+    "lastchange": 1377773619,
+    "message": "open for public"
+  },
+  "location": {
+    "city": "Wuppertal",
+    "lat": 51.259167,
+    "lon": 7.211111
+  },
+  "contact": {
+    "email": "kontakt@freifunk-wuppertal.net",
+    "facebook": "https://www.facebook.com/FreifunkWuppertal",
+    "ml": "wuppertal@mailman.freifunk-rheinland.net",
+    "phone": "+4920226135028",
+    "twitter": "https://twitter.com/ffwtal"
+  },
+  "events": [
+    {
+      "title": "Freifunkertreffen Wuppertal",
+      "timestamp": 1378314000,
+      "location": "LOGE Wuppertal, Alter Markt 28, 42275 Wuppertal"
+    },
+    {
+      "title": "Freifunkertreffen Wuppertal",
+      "timestamp": 1380733200,
+      "location": "LOGE Wuppertal, Alter Markt 28, 42275 Wuppertal"
+    }
+  ],
+  "techDetails": {
+    "störerhaftung": "VPN, p2pblock, splashpage",
+    "bootstrap": "plug&pray",
+    "firmware": {
+      "url": "https://firmware.freifunk-wuppertal.net",
+      "name": "FreifunkAdvanced"
+    },
+    "networks": {
+      "ipv6": [
+        {
+          "prefixlength": 64,
+          "prefix": "fda0:747e:ab29:e1ba::"
+        }
+      ],
+      "ipv4": [
+        {
+          "netmask": 16,
+          "network": "10.3.0.0"
+        }
+      ]
+    },
+    "routing": "BATMAN",
+    "splashpage": "custom",
+    "updatemode": "manual, automatic",
+    "vpn": "n2n"
+  },
+  "api": "0.1"
+}

@@ -1,0 +1,52 @@
+{
+  "name": "Leverkusen",
+  "metacommunity": "Freifunk-NRW",
+  "url": "http://lev.freifunk.net",
+  "state": {
+    "nodes": 6,
+    "lastchange": 1379183245
+  },
+  "location": {
+    "city": "Leverkusen",
+    "address": {
+      "Name": "Old Montana",
+      "Street": "Lützenkirchener Straße 214",
+      "Zipcode": "51381"
+    },
+    "lat": 51.065971,
+    "lon": 7.03097
+  },
+  "contact": {
+    "email": "leverkusen@freifunk.net",
+    "ml": "leverkusen@freifunk.net",
+    "phone": "+49-2196-909312",
+    "twitter": "https://twitter.com/fflev"
+  },
+  "techDetails": {
+    "stoererhaftung": "VereinsVPN vom Verbund freier Netzwerke NRW (i.G.)",
+    "bootstrap": "Software aufspielen, via HTML konfigurieren, per Mail anmelden.",
+    "firmware": {
+      "url": "http://fff.lev.freifunk.net/",
+      "name": "Lübecker Firmware (Pre-Gluon)"
+    },
+    "networks": {
+      "ipv6": [
+        {
+          "prefixlength": 64,
+          "prefix": "fda0:747e:ab29:5136::"
+        }
+      ],
+      "ipv4": [
+        {
+          "netmask": 16,
+          "network": "10.76.0.0"
+        }
+      ]
+    },
+    "routing": "BATMAN",
+    "splashpage": "None",
+    "updatemode": "Autoupdate geplant.",
+    "vpn": "Zugang via Gateway-Server vom Verein"
+  },
+  "api": "0.1"
+}

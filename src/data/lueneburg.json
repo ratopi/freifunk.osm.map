@@ -1,0 +1,27 @@
+{
+  "name": "Freifunk Lüneburg",
+  "url": "lueneburg.freifunk.net",
+  "state": {
+    "nodes": 8,
+    "lastchange": 1374174817,
+    "message": "open for public"
+  },
+  "location": {
+    "city": "Lüneburg",
+    "address": {
+      "Name": "Pons",
+      "Street": "Salzstrasse am Wasser 1",
+      "Zipcode": "21335 "
+    },
+    "lat": 53.24767,
+    "lon": 10.40982
+  },
+  "contact": {
+    "email": "claas.heinrich@gmail.com",
+    "facebook": "https://www.facebook.com/groups/Freifunk.Lueneburg/"
+  },
+  "techDetails": {
+    "routing": "BATMAN"
+  },
+  "api": "0.1"
+}

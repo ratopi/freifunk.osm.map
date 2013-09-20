@@ -1,0 +1,49 @@
+{
+  "name": "Freifunk Leipzig",
+  "url": "http://leipzig.freifunk.net",
+  "state": {
+    "nodes": 100,
+    "lastchange": 1373286587,
+    "message": "Wireless Community Network"
+  },
+  "location": {
+    "city": "Leipzig",
+    "address": {
+      "Zipcode": "04277"
+    },
+    "lat": 51.3405395,
+    "lon": 12.374492
+  },
+  "contact": {
+    "email": "info@leipzig.freifunk.net",
+    "facebook": "https://www.facebook.com/FreifunkLeipzig",
+    "irc": "#freifunk",
+    "twitter": "https://www.twitter.com/FreifunkLeipzig"
+  },
+  "techDetails": {
+    "stoererhaftung": "VPN",
+    "bootstrap": "in wiki und db zu registrieren",
+    "firmware": {
+      "url": "http://testing.meshkit.freifunk.net",
+      "name": "Openwrt Meshkit (Testing)"
+    },
+    "networks": {
+      "ipv4": [
+        {
+          "netmask": 16,
+          "network": "104.61.0.0"
+        },
+        {
+          "netmask": 16,
+          "network": "10.61.0.0"
+        }
+      ]
+    },
+    "routing": "OLSR",
+    "splashpage": "Openwrt",
+    "topodata": "https://db.leipzig.freifunk.net/uptime/dot/",
+    "updatemode": "manuell",
+    "vpn": "OpenVPN + OLSR"
+  },
+  "api": "0.1"
+}
