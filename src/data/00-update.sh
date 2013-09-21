@@ -14,7 +14,7 @@ wget -O directory.json. "$directoryURL"  &&  mv directory.json. directory.json
 # load state jsons
 grep ':' directory.json | sed -e 's:" *,::' -e 's:"::g' -e 's+:+ +' | sort | while read id url; do
 
-	wget -O "$id.json." "$url"  &&  mv "$id.json." "$id.json"
+	wget --no-check-certificate -O "$id.json." "$url"  &&  mv "$id.json." "$id.json"
 
 done
 

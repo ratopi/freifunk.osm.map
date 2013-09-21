@@ -1,6 +1,5 @@
 {
     "name": "weimarnetz", 
-    "api": "0.1", 
     "url": "http://www.weimarnetz.de", 
     "techDetails": {
         "vpn": "vtun without ssl and lzo", 
@@ -19,16 +18,17 @@
             ]
         }
     }, 
-    "state": {
-        "nodes": 95, 
-        "lastchange": 1379709901
-    }, 
     "contact": {
         "ml": "wireless-discuss@subsignal.org", 
         "twitter": "weimarnetz", 
         "facebook": "https://www.facebook.com/weimarnetz", 
         "phone": "+493643544304"
     }, 
+    "state": {
+        "nodes": 89, 
+        "lastchange": 1379780102
+    }, 
+    "api": "0.1", 
     "location": {
         "lat": 50.989530000000002, 
         "city": "Weimar", 
