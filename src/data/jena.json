@@ -2,8 +2,8 @@
     "name": "Freifunk Jena",
     "url": "http://freifunk-jena.de",
     "state": {
-        "nodes": 20,
-        "lastchange": 1379780102
+        "nodes": 22,
+        "lastchange": 1379877121
     },
     "location": {
         "city": "Jena",
