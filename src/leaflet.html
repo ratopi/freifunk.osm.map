@@ -28,39 +28,7 @@
 		}
 	).addTo( map );
 
-	/*
-
-	var marker = L.marker( [ 51.5, -0.09 ] ).addTo( map );
-
 	// ---
-
-	var circle = L.circle(
-		[ 51.508, -0.11 ],
-		500,
-		{
-			color: 'red',
-			fillColor: '#f03',
-			fillOpacity: 0.5
-		}
-	).addTo(map);
-
-	// ---
-
-	var polygon = L.polygon(
-		[
-			[ 51.509, -0.08 ],
-			[ 51.503, -0.06 ],
-			[ 51.51, -0.047 ]
-		]
-	).addTo(map);
-
-	// ---
-
-	marker.bindPopup( "<b>Hello world!</b><br>I am a popup." ).openPopup();
-	circle.bindPopup( "I am a circle." );
-	polygon.bindPopup( "I am a polygon." );
-
-	*/
 
 	var ffIcon = L.icon(
 		{
@@ -71,11 +39,9 @@
 			iconAnchor:   [ 15, 15 ], // point of the icon which will correspond to marker's location
 			// shadowSize:   [50, 64], // size of the shadow
 			// shadowAnchor: [4, 62],  // the same for the shadow
-			popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+			popupAnchor:  [ 0, 0 ] // point from which the popup should open relative to the iconAnchor
 		}
 	);
-
-	// L.marker( [51.495, -0.09], { icon: ffIcon } ).addTo( map );
 
 	// ---
 
@@ -92,8 +58,16 @@
 					"data/" + k + ".json",
 					function( x )
 					{
-						// x.name
-						L.marker( [ x.location.lat, x.location.lon ], { icon: ffIcon } ).addTo( map );
+						var marker = L.marker(
+							[ x.location.lat, x.location.lon ],
+							{
+								icon: ffIcon,
+								riseOnHover: true,
+								title: x.name
+							}
+						).addTo( map );
+
+						marker.bindPopup( x.name );
 
 						// automatition for centering the map ... ;-)
 						counter++;
