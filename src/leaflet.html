@@ -16,6 +16,22 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
 <script>
+	var iconDef =
+	{
+		iconUrl: 'img/Freifunk-Marker-1-20.png',
+		iconSize:     [ 20, 20 ], // size of the icon
+		iconAnchor:   [ 10, 10 ], // point of the icon which will correspond to marker's location
+		popupAnchor:  [ 0, 0 ] // point from which the popup should open relative to the iconAnchor
+	};
+
+	// ---
+
+	new Image().src = iconDef.iconUrl; // preload image
+
+	var ffIcon = L.icon( iconDef );
+
+	// ---
+
 	var map = L.map( 'map' ); // .setView( [ 51.505, -0.09 ], 13 );
 
 	L.tileLayer(
@@ -27,21 +43,6 @@
 			maxZoom: 18
 		}
 	).addTo( map );
-
-	// ---
-
-	var ffIcon = L.icon(
-		{
-			iconUrl: 'img/Freifunk-Marker-1-20.png',
-			// shadowUrl: 'leaf-shadow.png',
-
-			iconSize:     [ 20, 20 ], // size of the icon
-			iconAnchor:   [ 10, 10 ], // point of the icon which will correspond to marker's location
-			// shadowSize:   [50, 64], // size of the shadow
-			// shadowAnchor: [4, 62],  // the same for the shadow
-			popupAnchor:  [ 0, 0 ] // point from which the popup should open relative to the iconAnchor
-		}
-	);
 
 	// ---
 
