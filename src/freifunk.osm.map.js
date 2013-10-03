@@ -30,7 +30,7 @@ var freifunkOsmMap = function()
 
 	// ---
 
-	function createTooltip( props )
+	function createTooltip( community )
 	{
 		var iconBaseUrl = "img/";
 
@@ -58,31 +58,31 @@ var freifunkOsmMap = function()
 		// ---
 
 		var html = '';
-		if ( props.name )
+		if ( community.name )
 		{
 			html += '<b>';
-			if ( props.url ) html += '<a href="' + addIfMissingHttp( props.url ) + '" target="_window">';
-			html += props.name;
-			if ( props.url ) html += "</a>";
+			if ( community.url ) html += '<a href="' + addIfMissingHttp( community.url ) + '" target="_window">';
+			html += community.name;
+			if ( community.url ) html += "</a>";
 			html += '</b><br/>';
 		}
 
-		html += createInfoLine( props.metacommunity, props.metacommunity );
-		html += createInfoLine( props.city, props.city );
-		html += createInfoLine( props.nodes, '<br/>Zug&auml;nge: ' + props.nodes );
-		html += createInfoLine( props.contact.phone, '<br/>&#9990; ' + props.contact.phone );
+		html += createInfoLine( community.metacommunity, community.metacommunity );
+		html += createInfoLine( community.city, community.city );
+		html += createInfoLine( community.nodes, '<br/>Zug&auml;nge: ' + community.nodes );
+		html += createInfoLine( community.contact.phone, '<br/>&#9990; ' + community.contact.phone );
 
 		html += '<br/>';
 
-		html += createIconLink( props.url, props.url, 'icon_www.png' );
+		html += createIconLink( community.url, community.url, 'icon_www.png' );
 
-		html += createIconLink( props.contact.email, 'mailto:' + props.contact.email, 'icon_email.png' );
-		html += createIconLink( props.contact.facebook, props.contact.facebook, 'icon_facebook.png' );
-		html += createIconLink( props.contact.twitter, addIfMissingHttp( props.contact.twitter, 'https://twitter.com/' ), 'icon_twitter.png' );
-		html += createIconLink( props.contact.irc, 'irc:' + props.contact.irc, 'icon_irc.png' );
-		html += createIconLink( props.contact.jabber, 'xmpp:' + props.contact.jabber, 'icon_jabber.png' );
-		html += createIconLink( props.contact.identica, 'identica:' + props.contact.identicy, 'icon_identica.png' );
-		html += createIconLink( props.contact.googleplus, props.contact.googleplus, 'icon_googleplus.png' );
+		html += createIconLink( community.contact.email, 'mailto:' + community.contact.email, 'icon_email.png' );
+		html += createIconLink( community.contact.facebook, community.contact.facebook, 'icon_facebook.png' );
+		html += createIconLink( community.contact.twitter, addIfMissingHttp( community.contact.twitter, 'https://twitter.com/' ), 'icon_twitter.png' );
+		html += createIconLink( community.contact.irc, 'irc:' + community.contact.irc, 'icon_irc.png' );
+		html += createIconLink( community.contact.jabber, 'xmpp:' + community.contact.jabber, 'icon_jabber.png' );
+		html += createIconLink( community.contact.identica, 'identica:' + community.contact.identicy, 'icon_identica.png' );
+		html += createIconLink( community.contact.googleplus, community.contact.googleplus, 'icon_googleplus.png' );
 
 		return html;
 	}
