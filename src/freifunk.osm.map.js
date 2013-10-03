@@ -30,7 +30,7 @@ var freifunkOsmMap = function()
 
 	// ---
 
-	function createTooltip( props )
+	function createTooltip( community )
     {
         function createLink( link )
         {
@@ -41,37 +41,37 @@ var freifunkOsmMap = function()
 
         // ---
 
-        var html = '<b><a href="' + props.url + '" target="_window">'+ props.name + '</a></b><br/>';
+        var html = '<b><a href="' + community.url + '" target="_window">'+ community.name + '</a></b><br/>';
 
-        if (props.metacommunity) html += props.metacommunity + '<br/>';
-        if (props.city) html += props.city + '<br/>';
-        if (props.nodes) html += '<br/>Zug&auml;nge: ' + props.nodes + '<br/>';
-        if (props.phone) html += '<br/>&#9990; ' + props.phone + '<br/>';
+        if (community.metacommunity) html += community.metacommunity + '<br/>';
+        if (community.city) html += community.city + '<br/>';
+        if (community.nodes) html += '<br/>Zug&auml;nge: ' + community.nodes + '<br/>';
+        if (community.phone) html += '<br/>&#9990; ' + community.phone + '<br/>';
         html += '<br/>';
 
-        if (props.url && !props.url.match(/^http([s]?):\/\/.*/)) {
-          html += '<a href=\"http://' + props.url + '\" target=\"_window\"><img src=\"img/icon_www.png\" width="30px" style="margin-right: 15px;"/></a>';
+        if (community.url && !community.url.match(/^http([s]?):\/\/.*/)) {
+          html += '<a href=\"http://' + community.url + '\" target=\"_window\"><img src=\"img/icon_www.png\" width="30px" style="margin-right: 15px;"/></a>';
         }
         else {
-          html += '<a href=\"' + props.url + '\" target=\"_window\"><img src=\"img/icon_www.png\" width="30px" style="margin-right: 15px;"/></a>';
+          html += '<a href=\"' + community.url + '\" target=\"_window\"><img src=\"img/icon_www.png\" width="30px" style="margin-right: 15px;"/></a>';
         }
 
-        if (props.contact.email) html += '<a href=\"mailto:' + props.contact.email + '\"><img src=\"img/icon_email.png\" width="30px" style="margin-right: 15px;"/></a>';
-        if (props.contact.facebook) html += '<a href=\"' + props.contact.facebook + '\" target=\"_window\"><img src=\"img/icon_facebook.png\" width="30px" style="margin-right: 15px;"/></a>';
+        if (community.contact.email) html += '<a href=\"mailto:' + community.contact.email + '\"><img src=\"img/icon_email.png\" width="30px" style="margin-right: 15px;"/></a>';
+        if (community.contact.facebook) html += '<a href=\"' + community.contact.facebook + '\" target=\"_window\"><img src=\"img/icon_facebook.png\" width="30px" style="margin-right: 15px;"/></a>';
 
-        if (props.contact.twitter) {
-          if (props.contact.twitter && !props.contact.twitter.match(/^http([s]?):\/\/.*/)) {
-            html += '<a href=\"https://twitter.com/' + props.contact.twitter + '\" target=\"_window\"><img src=\"img/icon_twitter.png\" width="30px" style="margin-right: 15px;" alt=\"@' + props.twitter + '\" title=\"@' + props.twitter + '\"/></a>';
+        if (community.contact.twitter) {
+          if (community.contact.twitter && !community.contact.twitter.match(/^http([s]?):\/\/.*/)) {
+            html += '<a href=\"https://twitter.com/' + community.contact.twitter + '\" target=\"_window\"><img src=\"img/icon_twitter.png\" width="30px" style="margin-right: 15px;" alt=\"@' + community.twitter + '\" title=\"@' + community.twitter + '\"/></a>';
           }
           else {
-            html += '<a href=\"' + props.contact.twitter + '\" target=\"_window\"><img src=\"img/icon_twitter.png\" width="30px" style="margin-right: 15px;"/></a>';
+            html += '<a href=\"' + community.contact.twitter + '\" target=\"_window\"><img src=\"img/icon_twitter.png\" width="30px" style="margin-right: 15px;"/></a>';
           }
         }
 
-        if (props.contact.irc) html += '<a href=\"irc:' + props.contact.irc + '\"><img src=\"img/icon_irc.png\" width="30px" style="margin-right: 15px;"/></a>';
-        if (props.contact.jabber) html += '<a href=\"xmpp:' + props.contact.jabber + '\"><img src=\"img/icon_jabber.png\" width="30px" style="margin-right: 15px;"/></a>';
-        if (props.contact.identica) html += '<a href=\"identica:' + props.contact.identicy + '\"><img src=\"img/icon_identica.png\" width="30px" style="margin-right: 15px;"/></a>';
-        if (props.contact.googleplus) html += '<a href=\"' + props.contact.googleplus + '\" target=\"_window\"><img src=\"img/icon_googleplus.png\" width="30px" style="margin-right: 15px;"/></a>';
+        if (community.contact.irc) html += '<a href=\"irc:' + community.contact.irc + '\"><img src=\"img/icon_irc.png\" width="30px" style="margin-right: 15px;"/></a>';
+        if (community.contact.jabber) html += '<a href=\"xmpp:' + community.contact.jabber + '\"><img src=\"img/icon_jabber.png\" width="30px" style="margin-right: 15px;"/></a>';
+        if (community.contact.identica) html += '<a href=\"identica:' + community.contact.identicy + '\"><img src=\"img/icon_identica.png\" width="30px" style="margin-right: 15px;"/></a>';
+        if (community.contact.googleplus) html += '<a href=\"' + community.contact.googleplus + '\" target=\"_window\"><img src=\"img/icon_googleplus.png\" width="30px" style="margin-right: 15px;"/></a>';
 
         return html;
     }
