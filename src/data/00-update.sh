@@ -7,14 +7,11 @@ directoryURL="https://raw.github.com/freifunk/api.freifunk.net/master/directory/
 cd "$( dirname "$0" )"
 
 # load "master"
-wget -O directory.json. "$directoryURL"  &&  mv directory.json. directory.json
+curl -k -o directory.json. "$directoryURL"  &&  mv directory.json. directory.json
 
 # create local directory.json
 
 # load state jsons
 grep ':' directory.json | sed -e 's:" *,::' -e 's:"::g' -e 's+:+ +' | sort | while read id url; do
-
-	#wget --no-check-certificate -O "$id.json." "$url"  &&  mv "$id.json." "$id.json"
 	curl -k -o "$id.json." "$url"  &&  mv "$id.json." "$id.json"
-
 done
