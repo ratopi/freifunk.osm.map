@@ -3,9 +3,9 @@
     "name": "Freifunk Oldenburg",
     "url": "http:\/\/freifunk-ol.de",
     "state": {
-        "nodes": "60",
+        "nodes": "56",
         "message": " Die freie WLAN-Community aus Oldenburg \u2022 Freie Netze f\u00fcr alle! ",
-        "lastchange": 1379877247
+        "lastchange": 1380803470
     },
     "location": {
         "city": "Oldenburg",

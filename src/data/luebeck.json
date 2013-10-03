@@ -2,8 +2,8 @@
   "name": "Freifunk Lübeck",
   "url": "https://luebeck.freifunk.net/",
   "state": {
-    "lastchange": 1379873821,
-    "nodes": 165
+    "nodes": 176,
+    "lastchange": 1380802621
   },
   "location": {
     "city": "Lübeck",

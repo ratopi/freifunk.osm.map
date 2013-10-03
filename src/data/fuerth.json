@@ -1,15 +1,15 @@
 {
-    "name": "Freifunk Franken",
+    "name": "Freifunk Fürth",
+    "metacommunity": "Freifunk Franken",
     "url": "http://freifunk-franken.de",
     "state": {
-        "nodes": 102,
-        "lastchange": 1379366949,
-    "message": "Jeder darf mitmachen!"
+        "nodes": 20,
+        "lastchange": 1379366949
     },
     "location": {
-        "city": "Nürnberg",
-        "lat": 49.448856931202,
-        "lon": 11.082108258271
+        "city": "Fürth",
+        "lat": 49.47833,
+        "lon": 10.99027
     },
     "contact": {
         "email": "fragen@freifunk-franken.de",

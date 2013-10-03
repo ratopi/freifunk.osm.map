@@ -1,15 +1,15 @@
 {
-    "name": "Freifunk Franken",
+    "name": "Freifunk Unfinden",
+    "metacommunity": "Freifunk Franken",
     "url": "http://freifunk-franken.de",
     "state": {
-        "nodes": 102,
-        "lastchange": 1379366949,
-    "message": "Jeder darf mitmachen!"
+        "nodes": 15,
+        "lastchange": 1380466313
     },
     "location": {
-        "city": "Nürnberg",
-        "lat": 49.448856931202,
-        "lon": 11.082108258271
+        "city": "Unfinden",
+        "lat": 50.093555895082,
+        "lon": 10.568013390003
     },
     "contact": {
         "email": "fragen@freifunk-franken.de",
