@@ -74,8 +74,7 @@ var freifunkOsmMap = function()
 
 		html += '<br/>';
 
-		html += createIconLink( community.url, addIfMissingHttp( community.url ), 'icon_www.png' );
-
+		// html += createIconLink( community.url, addIfMissingHttp( community.url ), 'icon_www.png' );
 		html += createIconLink( community.contact.email, 'mailto:' + community.contact.email, 'icon_email.png' );
 		html += createIconLink( community.contact.facebook, community.contact.facebook, 'icon_facebook.png' );
 		html += createIconLink( community.contact.twitter, addIfMissingHttp( community.contact.twitter, 'https://twitter.com/' ), 'icon_twitter.png' );
