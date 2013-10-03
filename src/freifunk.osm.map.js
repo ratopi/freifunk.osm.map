@@ -88,17 +88,19 @@ var freifunkOsmMap = function()
 
 	// ---
 
+	var baseUrl = "data/";
+
 	var counter = 0;
 	var latSum = 0;
 	var lonSum = 0;
 	$.getJSON(
-		"data/directory.json",
+		baseUrl + "directory.json",
 		function( data )
 		{
 			for ( var k in data )
 			{
 				$.getJSON(
-					"data/" + k + ".json",
+					baseUrl + k + ".json",
 					function( community )
 					{
 						var marker = L.marker(
