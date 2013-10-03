@@ -70,18 +70,22 @@ var freifunkOsmMap = function()
 		html += createInfoLine( community.metacommunity, community.metacommunity );
 		html += createInfoLine( community.city, community.city );
 		html += createInfoLine( community.nodes, '<br/>Zug&auml;nge: ' + community.nodes );
-		html += createInfoLine( community.contact.phone, '<br/>&#9990; ' + community.contact.phone );
 
-		html += '<br/>';
+		if ( community.contact )
+		{
+			html += createInfoLine( community.contact.phone, '<br/>&#9990; ' + community.contact.phone );
 
-		// html += createIconLink( community.url, addIfMissingHttp( community.url ), 'icon_www.png' );
-		html += createIconLink( community.contact.email, 'mailto:' + community.contact.email, 'icon_email.png' );
-		html += createIconLink( community.contact.facebook, community.contact.facebook, 'icon_facebook.png' );
-		html += createIconLink( community.contact.twitter, addIfMissingHttp( community.contact.twitter, 'https://twitter.com/' ), 'icon_twitter.png' );
-		html += createIconLink( community.contact.irc, 'irc:' + community.contact.irc, 'icon_irc.png' );
-		html += createIconLink( community.contact.jabber, 'xmpp:' + community.contact.jabber, 'icon_jabber.png' );
-		html += createIconLink( community.contact.identica, 'identica:' + community.contact.identicy, 'icon_identica.png' );
-		html += createIconLink( community.contact.googleplus, community.contact.googleplus, 'icon_googleplus.png' );
+			html += '<br/>';
+
+			// html += createIconLink( community.url, addIfMissingHttp( community.url ), 'icon_www.png' );
+			html += createIconLink( community.contact.email, 'mailto:' + community.contact.email, 'icon_email.png' );
+			html += createIconLink( community.contact.facebook, community.contact.facebook, 'icon_facebook.png' );
+			html += createIconLink( community.contact.twitter, addIfMissingHttp( community.contact.twitter, 'https://twitter.com/' ), 'icon_twitter.png' );
+			html += createIconLink( community.contact.irc, 'irc:' + community.contact.irc, 'icon_irc.png' );
+			html += createIconLink( community.contact.jabber, 'xmpp:' + community.contact.jabber, 'icon_jabber.png' );
+			html += createIconLink( community.contact.identica, 'identica:' + community.contact.identicy, 'icon_identica.png' );
+			html += createIconLink( community.contact.googleplus, community.contact.googleplus, 'icon_googleplus.png' );
+		}
 
 		return html;
 	}
