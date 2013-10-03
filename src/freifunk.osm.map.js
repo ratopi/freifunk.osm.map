@@ -34,7 +34,7 @@ var freifunkOsmMap = function()
     {
         function createLink( link )
         {
-            var imageBaseUrl = "http://weimarnetz.de/ffmap/icons/";
+            var imageBaseUrl = "img/";
 
             return ! link ? "" : '<a href="' + link + '"><img src="' + imageBaseUrl + icon + '" width="30px" style="margin-right: 15px;"></a><br/>';
         }
@@ -50,28 +50,28 @@ var freifunkOsmMap = function()
         html += '<br/>';
 
         if (props.url && !props.url.match(/^http([s]?):\/\/.*/)) {
-          html += '<a href=\"http://' + props.url + '\" target=\"_window\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_www.png\" width="30px" style="margin-right: 15px;"/></a>';
+          html += '<a href=\"http://' + props.url + '\" target=\"_window\"><img src=\"img/icon_www.png\" width="30px" style="margin-right: 15px;"/></a>';
         }
         else {
-          html += '<a href=\"' + props.url + '\" target=\"_window\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_www.png\" width="30px" style="margin-right: 15px;"/></a>';
+          html += '<a href=\"' + props.url + '\" target=\"_window\"><img src=\"img/icon_www.png\" width="30px" style="margin-right: 15px;"/></a>';
         }
 
-        if (props.contact.email) html += '<a href=\"mailto:' + props.contact.email + '\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_email.png\" width="30px" style="margin-right: 15px;"/></a>';
-        if (props.contact.facebook) html += '<a href=\"' + props.contact.facebook + '\" target=\"_window\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_facebook.png\" width="30px" style="margin-right: 15px;"/></a>';
+        if (props.contact.email) html += '<a href=\"mailto:' + props.contact.email + '\"><img src=\"img/icon_email.png\" width="30px" style="margin-right: 15px;"/></a>';
+        if (props.contact.facebook) html += '<a href=\"' + props.contact.facebook + '\" target=\"_window\"><img src=\"img/icon_facebook.png\" width="30px" style="margin-right: 15px;"/></a>';
 
         if (props.contact.twitter) {
           if (props.contact.twitter && !props.contact.twitter.match(/^http([s]?):\/\/.*/)) {
-            html += '<a href=\"https://twitter.com/' + props.contact.twitter + '\" target=\"_window\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_twitter.png\" width="30px" style="margin-right: 15px;" alt=\"@' + props.twitter + '\" title=\"@' + props.twitter + '\"/></a>';
+            html += '<a href=\"https://twitter.com/' + props.contact.twitter + '\" target=\"_window\"><img src=\"img/icon_twitter.png\" width="30px" style="margin-right: 15px;" alt=\"@' + props.twitter + '\" title=\"@' + props.twitter + '\"/></a>';
           }
           else {
-            html += '<a href=\"' + props.contact.twitter + '\" target=\"_window\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_twitter.png\" width="30px" style="margin-right: 15px;"/></a>';
+            html += '<a href=\"' + props.contact.twitter + '\" target=\"_window\"><img src=\"img/icon_twitter.png\" width="30px" style="margin-right: 15px;"/></a>';
           }
         }
 
-        if (props.contact.irc) html += '<a href=\"irc:' + props.contact.irc + '\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_irc.png\" width="30px" style="margin-right: 15px;"/></a>';
-        if (props.contact.jabber) html += '<a href=\"xmpp:' + props.contact.jabber + '\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_jabber.png\" width="30px" style="margin-right: 15px;"/></a>';
-        if (props.contact.identica) html += '<a href=\"identica:' + props.contact.identicy + '\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_identica.png\" width="30px" style="margin-right: 15px;"/></a>';
-        if (props.contact.googleplus) html += '<a href=\"' + props.contact.googleplus + '\" target=\"_window\"><img src=\"http://weimarnetz.de/ffmap/icons/icon_googleplus.png\" width="30px" style="margin-right: 15px;"/></a>';
+        if (props.contact.irc) html += '<a href=\"irc:' + props.contact.irc + '\"><img src=\"img/icon_irc.png\" width="30px" style="margin-right: 15px;"/></a>';
+        if (props.contact.jabber) html += '<a href=\"xmpp:' + props.contact.jabber + '\"><img src=\"img/icon_jabber.png\" width="30px" style="margin-right: 15px;"/></a>';
+        if (props.contact.identica) html += '<a href=\"identica:' + props.contact.identicy + '\"><img src=\"img/icon_identica.png\" width="30px" style="margin-right: 15px;"/></a>';
+        if (props.contact.googleplus) html += '<a href=\"' + props.contact.googleplus + '\" target=\"_window\"><img src=\"img/icon_googleplus.png\" width="30px" style="margin-right: 15px;"/></a>';
 
         return html;
     }
