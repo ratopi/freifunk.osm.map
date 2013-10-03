@@ -30,52 +30,62 @@ var freifunkOsmMap = function()
 
 	// ---
 
-	function createTooltip( community )
-    {
-        function createLink( link )
-        {
-            var imageBaseUrl = "img/";
+	function createTooltip( props )
+	{
+		var iconBaseUrl = "img/";
 
-            return ! link ? "" : '<a href="' + link + '"><img src="' + imageBaseUrl + icon + '" width="30px" style="margin-right: 15px;"></a><br/>';
-        }
+		// ---
 
-        // ---
+		function createInfoLine( test, text )
+		{
+			return test ? text + '</br>' : '';
+		}
 
-        var html = '<b><a href="' + community.url + '" target="_window">'+ community.name + '</a></b><br/>';
+		function createIconLink( test, url, icon, text )
+		{
+			text = text ? text : '';
 
-        if (community.metacommunity) html += community.metacommunity + '<br/>';
-        if (community.city) html += community.city + '<br/>';
-        if (community.nodes) html += '<br/>Zug&auml;nge: ' + community.nodes + '<br/>';
-        if (community.phone) html += '<br/>&#9990; ' + community.phone + '<br/>';
-        html += '<br/>';
+			return ! test ? '' : '<a href="' + url + '" target="_blank"><img src="' + iconBaseUrl + icon + '" width="30px" style="margin-right: 15px;"/>' + text + '</a>';
+		}
 
-        if (community.url && !community.url.match(/^http([s]?):\/\/.*/)) {
-          html += '<a href=\"http://' + community.url + '\" target=\"_window\"><img src=\"img/icon_www.png\" width="30px" style="margin-right: 15px;"/></a>';
-        }
-        else {
-          html += '<a href=\"' + community.url + '\" target=\"_window\"><img src=\"img/icon_www.png\" width="30px" style="margin-right: 15px;"/></a>';
-        }
+		function addIfMissingHttp( url, addThis )
+		{
+			addThis = addThis ? addThis : 'http://';
 
-        if (community.contact.email) html += '<a href=\"mailto:' + community.contact.email + '\"><img src=\"img/icon_email.png\" width="30px" style="margin-right: 15px;"/></a>';
-        if (community.contact.facebook) html += '<a href=\"' + community.contact.facebook + '\" target=\"_window\"><img src=\"img/icon_facebook.png\" width="30px" style="margin-right: 15px;"/></a>';
+            return ! url ? null : ( url.match( /^http([s]?):\/\/.*/ ) ? "" : addThis ) + url;
+		}
 
-        if (community.contact.twitter) {
-          if (community.contact.twitter && !community.contact.twitter.match(/^http([s]?):\/\/.*/)) {
-            html += '<a href=\"https://twitter.com/' + community.contact.twitter + '\" target=\"_window\"><img src=\"img/icon_twitter.png\" width="30px" style="margin-right: 15px;" alt=\"@' + community.twitter + '\" title=\"@' + community.twitter + '\"/></a>';
-          }
-          else {
-            html += '<a href=\"' + community.contact.twitter + '\" target=\"_window\"><img src=\"img/icon_twitter.png\" width="30px" style="margin-right: 15px;"/></a>';
-          }
-        }
+		// ---
 
-        if (community.contact.irc) html += '<a href=\"irc:' + community.contact.irc + '\"><img src=\"img/icon_irc.png\" width="30px" style="margin-right: 15px;"/></a>';
-        if (community.contact.jabber) html += '<a href=\"xmpp:' + community.contact.jabber + '\"><img src=\"img/icon_jabber.png\" width="30px" style="margin-right: 15px;"/></a>';
-        if (community.contact.identica) html += '<a href=\"identica:' + community.contact.identicy + '\"><img src=\"img/icon_identica.png\" width="30px" style="margin-right: 15px;"/></a>';
-        if (community.contact.googleplus) html += '<a href=\"' + community.contact.googleplus + '\" target=\"_window\"><img src=\"img/icon_googleplus.png\" width="30px" style="margin-right: 15px;"/></a>';
+		var html = '';
+		if ( props.name )
+		{
+			html += '<b>';
+			if ( props.url ) html += '<a href="' + addIfMissingHttp( props.url ) + '" target="_window">';
+			html += props.name;
+			if ( props.url ) html += "</a>";
+			html += '</b><br/>';
+		}
 
-        return html;
-    }
+		html += createInfoLine( props.metacommunity, props.metacommunity );
+		html += createInfoLine( props.city, props.city );
+		html += createInfoLine( props.nodes, '<br/>Zug&auml;nge: ' + props.nodes );
+		html += createInfoLine( props.contact.phone, '<br/>&#9990; ' + props.contact.phone );
 
+		html += '<br/>';
+
+		html += createIconLink( props.url, props.url, 'icon_www.png' );
+
+		html += createIconLink( props.contact.email, 'mailto:' + props.contact.email, 'icon_email.png' );
+		html += createIconLink( props.contact.facebook, props.contact.facebook, 'icon_facebook.png' );
+		html += createIconLink( props.contact.twitter, addIfMissingHttp( props.contact.twitter, 'https://twitter.com/' ), 'icon_twitter.png' );
+		html += createIconLink( props.contact.irc, 'irc:' + props.contact.irc, 'icon_irc.png' );
+		html += createIconLink( props.contact.jabber, 'xmpp:' + props.contact.jabber, 'icon_jabber.png' );
+		html += createIconLink( props.contact.identica, 'identica:' + props.contact.identicy, 'icon_identica.png' );
+		html += createIconLink( props.contact.googleplus, props.contact.googleplus, 'icon_googleplus.png' );
+
+		return html;
+	}
 
 	// ---
 
