@@ -30,6 +30,13 @@ var freifunkOsmMap = function()
 
 	// ---
 
+	function createTooltip( community )
+	{
+		return community.name; // for now only the name of the community
+	}
+
+	// ---
+
 	var counter = 0;
 	var latSum = 0;
 	var lonSum = 0;
@@ -41,23 +48,23 @@ var freifunkOsmMap = function()
 			{
 				$.getJSON(
 					"data/" + k + ".json",
-					function( x )
+					function( community )
 					{
 						var marker = L.marker(
-							[ x.location.lat, x.location.lon ],
+							[ community.location.lat, community.location.lon ],
 							{
 								icon: ffIcon,
 								riseOnHover: true,
-								title: x.name
+								title: community.name
 							}
 						).addTo( map );
 
-						marker.bindPopup( x.name );
+						marker.bindPopup( createTooltip( community ) );
 
 						// center the map to the middle of all points ... ;-)
 						counter++;
-						latSum += x.location.lat;
-						lonSum += x.location.lon;
+						latSum += community.location.lat;
+						lonSum += community.location.lon;
 
 						map.setView( [ ( latSum / counter), ( lonSum / counter) ], 6 );
 					}
