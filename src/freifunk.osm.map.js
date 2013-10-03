@@ -61,7 +61,7 @@ var freifunkOsmMap = function()
 		if ( community.name )
 		{
 			html += '<b>';
-			if ( community.url ) html += '<a href="' + addIfMissingHttp( community.url ) + '" target="_window">';
+			if ( community.url ) html += '<a href="' + addIfMissingHttp( community.url ) + '" target="_blank">';
 			html += community.name;
 			if ( community.url ) html += "</a>";
 			html += '</b><br/>';
