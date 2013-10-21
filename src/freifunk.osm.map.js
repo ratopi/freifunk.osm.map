@@ -92,7 +92,7 @@ var freifunkOsmMap = function()
 
 	// ---
 
-	var baseUrl = "data/";
+	var baseUrl = "http://freifunk-ffm.no-ip.info/freifunk/directory/";
 
 	var counter = 0;
 	var latSum = 0;
