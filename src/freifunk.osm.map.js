@@ -1,3 +1,8 @@
+/*
+License: http://creativecommons.org/licenses/by-nc-sa/3.0/
+By Ralf Th. Pietsch
+See https://github.com/ratopi/freifunk.osm.map for more information
+*/
 
 var freifunkOsmMap = function()
 {
