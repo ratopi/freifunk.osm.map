@@ -29,7 +29,8 @@ var freifunkOsmMap = function()
 		'http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png',
 		{
 			attribution: 'Map data and Imagery &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>; Source: <a href="https://github.com/ratopi/freifunk.osm.map">@github</a>',
-			maxZoom: 18
+			maxZoom: 18,
+			opacity: .7
 		}
 	).addTo( map );
 
