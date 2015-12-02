@@ -98,7 +98,7 @@ var freifunkOsmMap = function()
 
 	// ---
 
-	var baseUrl = "http://ratopi.lacerta.uberspace.de/freifunk/directory/";
+	var baseUrl = "https://ratopi.lacerta.uberspace.de/freifunk/directory/";
 
 	var counter = 0;
 	var latSum = 0;
